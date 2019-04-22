@@ -2,19 +2,24 @@
   "name": "photo-gallery",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
-  },
+  "homepage": "https://amannn.github.io/photo-gallery",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "classnames": "2.2.6",
+    "has-touch": "1.0.1",
+    "keymaster": "1.6.2",
+    "node-sass": "4.11.0",
+    "prop-types": "15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.0"
   },
   "browserslist": {
     "production": [
@@ -27,5 +32,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-config-molindo": "3.0.0",
+    "eslint-plugin-css-modules": "2.11.0",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react": "7.12.4",
+    "gh-pages": "2.0.1",
+    "prettier": "1.17.0"
   }
 }

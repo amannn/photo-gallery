@@ -1,0 +1,20 @@
+@import '../styles/animations';
+
+.root {
+  padding: 12px;
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  box-sizing: border-box;
+  @include hover-slow-in-slow-out(opacity);
+  background: transparent;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &_disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+}

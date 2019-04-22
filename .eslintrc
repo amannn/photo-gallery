@@ -1,0 +1,22 @@
+{
+  "extends": "molindo/react",
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "node_modules",
+          "src"
+        ]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}

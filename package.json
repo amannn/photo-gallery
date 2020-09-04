@@ -15,7 +15,7 @@
     "classnames": "2.2.6",
     "has-touch": "1.0.1",
     "keymaster": "1.6.2",
-    "node-sass": "4.11.0",
+    "node-sass": "4.13.1",
     "prop-types": "15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

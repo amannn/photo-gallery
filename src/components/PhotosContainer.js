@@ -50,6 +50,15 @@ export default class PhotosContainer extends Component {
     this.update();
 
     window.addEventListener('resize', this.onWindowResize);
+    this.rootNode.addEventListener('touchstart', this.onTouchStart, {
+      passive: false
+    });
+    this.rootNode.addEventListener('touchmove', this.onTouchMove, {
+      passive: false
+    });
+    this.rootNode.addEventListener('touchend', this.onTouchEnd, {
+      passive: false
+    });
   }
 
   componentDidUpdate() {
@@ -59,6 +68,9 @@ export default class PhotosContainer extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.onWindowResize);
+    this.rootNode.removeEventListener('touchstart', this.onTouchStart);
+    this.rootNode.removeEventListener('touchmove', this.onTouchMove);
+    this.rootNode.removeEventListener('touchend', this.onTouchEnd);
   }
 
   onWindowResize = () => {
@@ -218,18 +230,20 @@ export default class PhotosContainer extends Component {
     }
   }
 
+  onRootRef = node => {
+    this.rootNode = node;
+  };
+
   render() {
     const {photos} = this.props;
 
     return (
       <div
+        ref={this.onRootRef}
         className={styles.root}
         onMouseDown={this.onTouchStart}
         onMouseMove={this.onTouchMove}
         onMouseUp={this.onTouchEnd}
-        onTouchEnd={this.onTouchEnd}
-        onTouchMove={this.onTouchMove}
-        onTouchStart={this.onTouchStart}
       >
         {photos.map(photo => (
           <div
